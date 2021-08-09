@@ -1,15 +1,20 @@
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="minified.js"></script>
-    <script src="main.js"></script>
-    <title>tableso</title>
-</head>
-<body>
-    <textarea oninput="run();" id='inp'></textarea>
-    <button onclick="run();">Run</button>
-    <div id='out'></div>
-</body>
-</html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="interp.js"></script>
+        <script src="main.js"></script>
+        <link href="styles/out-tailwind.css" rel="stylesheet">
+        <title>tableso</title>
+    </head>
+    <body class="bg-gray-900 tracking-widest" style="letter-spacing:.7em; line-height:8em;">
+        <div class="font-mono text-xl flex flex-col h-5/6 w-3/4 mx-auto max-w-md">
+            <div oninput="run();" id='inp' contenteditable
+            class="bg-gray-800 mx-auto flex-1 h-full w-full rounded-xl shadow-sm drop-shadow-lg resize-none mt-8 text-blue-300 focus:outline-none px-6 py-4"></div>
+            <div id='out'
+            class="text-green-200 px-4 py-2 mt-4 bg-gray-800 h-1/6 drop-shadow-lg shadow-sm rounded-lg"></div>
+        </div>
+    </body>
+    </html>
