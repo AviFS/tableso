@@ -1,4 +1,6 @@
 from commands import *
+from jsbuilder import js
+from pscript import py2js
 
 ops = {
     '+': add,
@@ -44,5 +46,3 @@ code = """
 
 if __name__ == "__main__":
     interp(code)
-
-
