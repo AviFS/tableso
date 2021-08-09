@@ -294,6 +294,7 @@ parser = function flx_parser (code) {
 };
 
 interp = function flx_interp (code) {
+    stack = []; output = ''; // Needed to reset accs after each run
     var kind, parsed, stack, stub6_seq, stub7_itr, stub8_tgt, value;
     stack = [];
     parsed = parser(code);
