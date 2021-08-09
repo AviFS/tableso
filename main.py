@@ -35,11 +35,11 @@ def interp(code):
     return stack
 
 code = """
-,+.
+,-.
 2
 4
 3
- 31
+ 21
 """
 
 if __name__ == "__main__":
