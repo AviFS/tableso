@@ -9,7 +9,7 @@ def binary_op(stack, value, op, id=0):
         return stack + [op(popped, popped)]
     value = int(value)
     for _ in range(value-1):
-        stack.append(op(stack.pop(), stack.pop()))
+        stack.append(int(op(stack.pop(), stack.pop())))
     return stack
 
 def unary_op(stack, value, op, id=0):
@@ -17,7 +17,7 @@ def unary_op(stack, value, op, id=0):
         return stack+[id]
     value = int(value)
     for _ in range(value):
-        stack.append(op(stack.pop(), stack.pop()))
+        stack.append(int(op(stack.pop(), stack.pop())))
     return stack
 
 ### COMMANDS ###
