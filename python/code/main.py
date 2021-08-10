@@ -12,6 +12,9 @@ ops = {
     '_': flip_sign,
     '~': negate,
     '!': boolify,
+    '=': equals,
+    '<': less_than,
+    '>': greater_than,
     ',': inp,
     '.': out,
 }

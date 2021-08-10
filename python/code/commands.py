@@ -56,6 +56,18 @@ def flip_sign(stack, value):
     return unary_op(stack, value,
     lambda a: -a)
 
+def equals(stack, value):
+    return binary_op(stack, value,
+    lambda a,b: a==b)
+
+def less_than(stack, value):
+    return binary_op(stack, value,
+    lambda a,b: a<b)
+
+def greater_than(stack, value):
+    return binary_op(stack, value,
+    lambda a,b: a>b)
+
 def inp(stack, value):
     value = int(value)
     stack.append(value)
