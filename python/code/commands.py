@@ -1,15 +1,22 @@
 OUTPUT_SEP = ''
 
 ### HELPERS ###
-def binary_op(stack, value, op):
+def binary_op(stack, value, op, id=0):
+    if value==0:
+        return stack+[id]
+    if value==1:
+        popped = stack.pop()
+        return stack + [op(popped, popped)]
     value = int(value)
     for _ in range(value-1):
         stack.append(op(stack.pop(), stack.pop()))
     return stack
 
-def unary_op(stack, value, op):
+def unary_op(stack, value, op, id=0):
+    if value==0:
+        return stack+[id]
     value = int(value)
-    for _ in range(value-1):
+    for _ in range(value):
         stack.append(op(stack.pop(), stack.pop()))
     return stack
 
@@ -25,12 +32,12 @@ def sub(stack, value):
 
 def mult(stack, value):
     return binary_op(stack, value,
-        lambda a,b: a*b)
+        lambda a,b: a*b, 1)
 
 
 def div(stack, value):
     return binary_op(stack, value,
-        lambda a,b: a//b)
+        lambda a,b: a//b, 1)
 
 
 def mod(stack, value):
@@ -43,7 +50,7 @@ def negate(stack, value):
 
 def boolify(stack, value):
     return unary_op(stack, value,
-    lambda a: not not a)
+    lambda a: not not a, 1)
 
 def flip_sign(stack, value):
     return unary_op(stack, value,
